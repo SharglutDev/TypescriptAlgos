@@ -24,4 +24,13 @@ const names: string[] = [
   "Josselin",
 ];
 
-function Search(search: string, listName: string[]): string[] {}
+let result: string[] = [];
+
+function Search(search: string, listName: string[]): string[] {
+  listName.forEach((name) => {
+    name.toLowerCase().includes(search) && result?.push(name);
+  });
+  return result;
+}
+
+console.log(Search("li", names));
